@@ -4,7 +4,7 @@ mv wp-cli.phar /usr/local/bin/wp
 
 wait_for_db() {
     echo "Waiting for database connection for $MYSQL_USER@$MYSQL_PASSWORD"
-    until mysql -h "mariadb" -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "SHOW DATABASES;" > /dev/null 2>&1; do
+    until mysql -h "$WP_MYSQL_HOST" -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "SHOW DATABASES;" > /dev/null 2>&1; do
         echo "Database is not ready. Retrying in 5 seconds..."
         sleep 5
     done
