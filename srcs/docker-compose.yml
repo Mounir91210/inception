@@ -27,7 +27,6 @@ services:
       - mariadb
     restart: unless-stopped
  
-
   nginx:
     container_name: nginx
     build:
@@ -48,17 +47,17 @@ services:
 volumes:
   wordpress:
     driver: local
-    driver_opts:
-      type: 'none'
-      o: 'bind'
-      device: '$HOME/data/wordpress'
+    # driver_opts:
+    #   type: 'none'
+    #   o: 'bind'
+    #   device: '$HOME/data/wordpress'
 
   mariadb:
     driver: local
-    driver_opts:
-      type: 'none'
-      o: 'bind'
-      device: '$HOME/data/mariadb'
+    # driver_opts:
+    #   type: 'none'
+    #   o: 'bind'
+    #   device: '$HOME/data/mariadb'
 
 networks:
   inception:
