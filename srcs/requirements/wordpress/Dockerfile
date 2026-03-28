@@ -14,5 +14,5 @@ COPY ./conf/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 COPY ./tools/wordpress_config.sh /
 
 WORKDIR /var/www/wordpress
- 
+
 ENTRYPOINT ["bash", "/wordpress_config.sh"]
